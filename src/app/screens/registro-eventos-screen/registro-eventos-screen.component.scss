@@ -1,88 +1,79 @@
 .wrapper {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  min-height: 100vh;
-  background-color: #f5f5f5;
+  width: 100vw;
+  height: 90vh;
 }
 
 .header-home {
-  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
 }
 
 .body-alumnos {
-  flex: 1;
-  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.container {
+  max-width: 90vw;
+}
+
+.title-perfil {
+  margin-left: 3rem;
+  font-size: 32px;
+  text-align: left;
+  font-family: Nexa-Bold;
+  color: #231F20;
+  text-transform: capitalize;
 }
 
 .title-table {
-  font-size: 1.4rem;
-  font-weight: 600;
-}
-
-.mat-elevation-z8 {
-  overflow-x: auto;
-  border-radius: 8px;
-  background: white;
-  padding: 1rem;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  margin-left: 3rem;
+  font-size: 28px;
+  text-align: left;
+  font-family: Nexa-Bold;
+  color: #231F20;
+  text-transform: capitalize;
 }
 
 table {
   width: 100%;
-  border-spacing: 0;
+  padding-bottom: 1.5rem;
 }
 
-th.mat-header-cell, td.mat-cell {
+::ng-deep .mat-mdc-table {
+  table-layout: fixed !important;
+}
+
+.mat-mdc-header-cell {
+  border-bottom-color: #231F20;
+  font-family: Nexa-Bold !important;
+  font-size: 18px;
+  text-align: left;
+  color: #231F20;
+}
+
+.mat-mdc-cell {
+  text-align: left;
+  font-family: Nexa !important;
+  font-size: 15px !important;
+  color: #231F20 !important;
+}
+
+.td-editar {
+  color: #0092B8 !important;
+  cursor: pointer !important;
+  font-size: 20px !important;
   text-align: center;
-  padding: 12px 8px;
-  font-size: 0.95rem;
 }
 
-th.mat-header-cell {
-  font-weight: bold;
-  background-color: #e3f2fd;
-}
-
-td.mat-cell {
-  vertical-align: middle;
-}
-
-tr.mat-row:nth-child(odd) {
-  background-color: #f9f9f9;
-}
-
-tr.mat-row:hover {
-  background-color: #f0f0f0;
-}
-
-.td-editar i, .td-eliminar i {
-  cursor: pointer;
-  font-size: 1.2rem;
-  transition: transform 0.2s, color 0.2s;
-}
-
-.td-editar i:hover {
-  color: #1976d2;
-  transform: scale(1.2);
-}
-
-.td-eliminar i:hover {
-  color: #d32f2f;
-  transform: scale(1.2);
-}
-
-@media screen and (max-width: 768px) {
-  .title-table {
-    font-size: 1.2rem;
-  }
-
-  th.mat-header-cell, td.mat-cell {
-    font-size: 0.85rem;
-    padding: 8px 4px;
-  }
-
-  .mat-elevation-z8 {
-    padding: 0.5rem;
-  }
+.td-editar:hover {
+  color: #006179 !important;
+  font-size: 25px !important;
+  text-align: center;
 }
