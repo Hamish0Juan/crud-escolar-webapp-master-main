@@ -36,6 +36,10 @@ export class NavbarComponent implements OnInit{
   public goRegistro(){
     this.router.navigate(["registro-usuarios"]);
   }
+  
+  public goEventos(){
+  this.router.navigate(["/registro-eventos"]);
+}
 
   //Cerrar sesión
   public logout(){
@@ -77,6 +81,7 @@ export class NavbarComponent implements OnInit{
       $("#maestro").removeClass("active");
       $("#principal").removeClass("active");
       $("#graficas").addClass("active");
+      
     }
   }
 }

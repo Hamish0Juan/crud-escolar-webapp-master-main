@@ -7,6 +7,8 @@ import { AdminScreenComponent } from './screens/admin-screen/admin-screen.compon
 import { AlumnosScreenComponent } from './screens/alumnos-screen/alumnos-screen.component';
 import { MaestrosScreenComponent } from './screens/maestros-screen/maestros-screen.component';
 import { GraficasScreenComponent } from './screens/graficas-screen/graficas-screen.component';
+import { RegistroEventosScreenComponent } from './screens/registro-eventos-screen/registro-eventos-screen.component';
+import { EventosComponent } from './partials/registro-eventos/registro-eventos.component';
 
 const routes: Routes = [
   { path:'', component: LoginScreenComponent, pathMatch: 'full'},
@@ -17,6 +19,8 @@ const routes: Routes = [
   { path: 'maestros', component: MaestrosScreenComponent, pathMatch: 'full' },
   { path: 'administrador', component: AdminScreenComponent, pathMatch: 'full' },
   { path: 'graficas', component:GraficasScreenComponent, pathMatch: 'full' },
+  { path: 'registro-eventos', component:RegistroEventosScreenComponent, pathMatch: 'full' },
+  { path: 'eventos', component:EventosComponent, pathMatch: 'full' },
   
 ];
 

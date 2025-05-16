@@ -1,34 +1,30 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
-
-//Este import es para los servicios HTTP
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'; // ✅ Añadido ReactiveFormsModule
 import { HttpClientModule } from '@angular/common/http';
-
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginScreenComponent } from './screens/login-screen/login-screen.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-//Angular material
-import {MatButtonModule} from '@angular/material/button';
-import {MatIconModule} from '@angular/material/icon';
-import {MatDividerModule} from '@angular/material/divider';
-import {MatRadioModule} from '@angular/material/radio';
-import {MatInputModule} from '@angular/material/input';
-import {MatDatepickerModule} from '@angular/material/datepicker';
-import {MatNativeDateModule} from '@angular/material/core';
-import {MatSelectModule} from '@angular/material/select';
-import {MatCheckboxModule} from '@angular/material/checkbox';
-import {MatTableModule} from '@angular/material/table';
-import {MatPaginatorModule} from '@angular/material/paginator';
-import {MatDialogModule} from '@angular/material/dialog';
+// Angular Material
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field'; // ✅ Añadido
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
+import { MatSelectModule } from '@angular/material/select';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatDialogModule } from '@angular/material/dialog';
 
-//Para usar el mask
+// ngx-mask
 import { NgxMaskDirective, provideNgxMask } from 'ngx-mask';
-//Cambia el idioma a español
-import { MAT_DATE_LOCALE } from '@angular/material/core';
 
 import { RegistroUsuariosScreenComponent } from './screens/registro-usuarios-screen/registro-usuarios-screen.component';
 import { HomeScreenComponent } from './screens/home-screen/home-screen.component';
@@ -41,8 +37,9 @@ import { AlumnosScreenComponent } from './screens/alumnos-screen/alumnos-screen.
 import { MaestrosScreenComponent } from './screens/maestros-screen/maestros-screen.component';
 import { EliminarUserModalComponent } from './modals/eliminar-user-modal/eliminar-user-modal.component';
 import { GraficasScreenComponent } from './screens/graficas-screen/graficas-screen.component';
+import { RegistroEventosScreenComponent } from './screens/registro-eventos-screen/registro-eventos-screen.component';
+import { EventosComponent } from './partials/registro-eventos/registro-eventos.component';
 import { NgChartsModule } from 'ng2-charts';
-
 
 @NgModule({
   declarations: [
@@ -58,32 +55,40 @@ import { NgChartsModule } from 'ng2-charts';
     AlumnosScreenComponent,
     MaestrosScreenComponent,
     EliminarUserModalComponent,
-    GraficasScreenComponent
+    GraficasScreenComponent,
+    RegistroEventosScreenComponent,
+    EventosComponent, // ⚠️ Este componente faltaba aquí
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule, // ✅ Añadido
+    HttpClientModule,
+    NgChartsModule,
+
+    // Material Modules
     MatButtonModule,
     MatIconModule,
     MatDividerModule,
-    FormsModule,
+    MatRadioModule,
     MatInputModule,
-    NgxMaskDirective,
+    MatFormFieldModule, // ✅ Añadido
     MatDatepickerModule,
     MatNativeDateModule,
     MatSelectModule,
     MatCheckboxModule,
-    HttpClientModule,
     MatTableModule,
     MatPaginatorModule,
     MatDialogModule,
-    NgChartsModule,
-    MatRadioModule
+
+    // Directiva Mask
+    NgxMaskDirective,
   ],
   providers: [
-    {provide: MAT_DATE_LOCALE, useValue: 'es-ES'},
-    provideNgxMask()
+    { provide: MAT_DATE_LOCALE, useValue: 'es-ES' },
+    provideNgxMask() // ✅ Correcta forma de usar desde Angular 16+
   ],
   bootstrap: [AppComponent]
 })
