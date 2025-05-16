@@ -37,7 +37,7 @@ import { AlumnosScreenComponent } from './screens/alumnos-screen/alumnos-screen.
 import { MaestrosScreenComponent } from './screens/maestros-screen/maestros-screen.component';
 import { EliminarUserModalComponent } from './modals/eliminar-user-modal/eliminar-user-modal.component';
 import { GraficasScreenComponent } from './screens/graficas-screen/graficas-screen.component';
-import { RegistroEventosScreenComponent } from './screens/registro-eventos-screen/registro-eventos-screen.component';
+import { EventosScreenComponent } from './screens/registro-eventos-screen/registro-eventos-screen.component';
 import { EventosComponent } from './partials/registro-eventos/registro-eventos.component';
 import { NgChartsModule } from 'ng2-charts';
 
@@ -56,7 +56,7 @@ import { NgChartsModule } from 'ng2-charts';
     MaestrosScreenComponent,
     EliminarUserModalComponent,
     GraficasScreenComponent,
-    RegistroEventosScreenComponent,
+    EventosScreenComponent,
     EventosComponent, // ⚠️ Este componente faltaba aquí
   ],
   imports: [
